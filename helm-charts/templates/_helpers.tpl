@@ -1,6 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
+{{/* This is for service Name  */}}
 {{- define "pharma-service.name" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
@@ -47,7 +48,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
-Selector labels
+ This is for Selector labels
 */}}
 {{- define "pharma-service.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "pharma-service.name" . }}
