@@ -13,7 +13,8 @@ service:
 ingress:
   enabled: true
   className: nginx
-  host: a0ffda4d239d941549d518de18c19f6f-cf2f70374c2e5a74.elb.us-east-1.amazonaws.com
+  # this should be replaced anytime the load balancer is recreated from the infra code.
+  host: ab14c756a19cf4f7bae7e46a55e679e5-81e9d531dbf229a2.elb.eu-central-1.amazonaws.com
   path: /api
   pathType: Prefix
 

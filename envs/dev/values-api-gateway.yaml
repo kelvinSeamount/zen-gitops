@@ -12,6 +12,7 @@ ingress:
   enabled: true
   className: nginx
   annotations: {}
+  #dev — host: "" is empty → condition is false → the host: line is skipped entirely from  helm-charts/templates/ingress.yaml:21-23:
   host: ""
   path: /api
   pathType: Prefix
