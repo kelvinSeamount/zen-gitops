@@ -47,7 +47,8 @@ readinessProbe:
   successThreshold: 1
 configmap:
   SPRING_PROFILES_ACTIVE: dev
-  DB_HOST: pharma-dev-postgres.cyrywaguk6v4.eu-central-1.rds.amazonaws.com
+  #changes every time you reccreate (ctiikmkmmsnk is the random part of the RDS endpoint)
+  DB_HOST: pharma-dev-postgres.ctiikmkmmsnk.eu-central-1.rds.amazonaws.com
   LOG_LEVEL: DEBUG
   SERVER_PORT: "8082"
   MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics,prometheus"
