@@ -44,6 +44,7 @@ readinessProbe:
   successThreshold: 1
 configmap:
   SPRING_PROFILES_ACTIVE: qa
+  #changes every time you reccreate (cs3c424yurej is the random part of the RDS endpoint)
   DB_HOST: pharma-qa-postgres.cs3c424yurej.eu-central-1.rds.amazonaws.com
   LOG_LEVEL: DEBUG
   SERVER_PORT: "8081"
