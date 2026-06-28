@@ -1,9 +1,9 @@
 replicaCount: 1
 fullnameOverride: auth-service
 image:
-# add your AWS ACCOUNT_ID and ECR repository name here
+  # add your AWS ACCOUNT_ID and ECR repository name here
   repository: 866259084078.dkr.ecr.eu-central-1.amazonaws.com/auth-service
-  tag: sha-2a78e08
+  tag: sha-1b62c9c
   pullPolicy: Always
 service:
   type: ClusterIP
