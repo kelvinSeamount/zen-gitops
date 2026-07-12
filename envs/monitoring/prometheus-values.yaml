@@ -116,11 +116,29 @@ kubeStateMetrics:
 nodeExporter:
   enabled: true
 
+# EKS: the control plane is AWS-managed and not scrapable, and kube-proxy
+# binds metrics to 127.0.0.1. Disable them so no dead scrape targets or
+# kube-system Services are created. CoreDNS is scrapable, keep it on.
+kubeEtcd:
+  enabled: false
+
+kubeScheduler:
+  enabled: false
+
+kubeControllerManager:
+  enabled: false
+
+kubeProxy:
+  enabled: false
+
+coreDns:
+  enabled: true
+
 defaultRules:
   create: true
   rules:
     alertmanager: true
-    etcd: true
+    etcd: false
     configReloaders: true
     general: true
     k8s: true
@@ -129,14 +147,14 @@ defaultRules:
     kubeApiserverHistogram: true
     kubeApiserverSlos: true
     kubelet: true
-    kubeProxy: true
+    kubeProxy: false
     kubePrometheusGeneral: true
     kubePrometheusNodeRecording: true
     kubernetesApps: true
     kubernetesResources: true
     kubernetesStorage: true
     kubernetesSystem: true
-    kubeScheduler: true
+    kubeScheduler: false
     kubeStateMetrics: true
     network: true
     node: true

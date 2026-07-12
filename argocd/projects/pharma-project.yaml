@@ -25,6 +25,9 @@ spec:
       namespace: argocd
     - server: https://kubernetes.default.svc
       namespace: monitoring
+    # kube-prometheus-stack creates the CoreDNS scrape Service here
+    - server: https://kubernetes.default.svc
+      namespace: kube-system
 
   clusterResourceWhitelist:
     - group: "*"
