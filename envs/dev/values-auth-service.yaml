@@ -3,7 +3,7 @@ fullnameOverride: auth-service
 image:
   # add your AWS ACCOUNT_ID and ECR repository name here
   repository: 866259084078.dkr.ecr.eu-central-1.amazonaws.com/auth-service
-  tag: sha-40779bc
+  tag: sha-7ed7b30
   pullPolicy: Always
 service:
   type: ClusterIP
