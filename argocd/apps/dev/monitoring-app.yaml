@@ -23,7 +23,7 @@ spec:
 
     # Values file reference for the Helm chart above
     - repoURL: https://github.com/kelvinSeamount/zen-gitops.git
-      targetRevision: feature/fluent-bit-logging
+      targetRevision: HEAD
       helm:
         valueFiles:
           - $values/envs/dev/values-fluent-bit.yaml
