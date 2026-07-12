@@ -35,9 +35,11 @@ grafana:
             path: /var/lib/grafana/dashboards/default
   dashboards:
     default:
+      # Official Fluent Bit dashboard (matches fluentbit_* metrics; the
+      # previous gnetId 7752 was built for Banzai Logging Operator and
+      # expects a Fluentd that this stack doesn't run)
       fluent-bit:
-        gnetId: 7752
-        revision: 1
+        url: https://raw.githubusercontent.com/fluent/fluent-bit/master/monitoring/dashboard.json
         datasource: Prometheus
 
 alertmanager:
