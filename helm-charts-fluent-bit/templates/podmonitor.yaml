@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: {{ include "fluent-bit.name" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "fluent-bit.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "fluent-bit.name" . }}
+  podMetricsEndpoints:
+    - port: http
+      path: /api/v1/metrics/prometheus
+      interval: 30s
